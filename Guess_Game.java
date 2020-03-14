@@ -40,6 +40,7 @@ public class Guess_Game {
 	}
      if (right == false ) {
     	 System.out.println("Nobody Guessed it right");
+	 System.out.println("Better luck next time");
      }
 }
 }
