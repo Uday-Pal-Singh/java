@@ -1,3 +1,5 @@
+/* this program generates a random no and users has to guess that no and if the no matches then the user wins*/
+
 import java.util.Scanner;
 class player{
 	int noGuessed;
