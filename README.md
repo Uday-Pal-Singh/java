@@ -1,1 +1,2 @@
-contains all my java code 
+This repository contains some of my java programs 
+
