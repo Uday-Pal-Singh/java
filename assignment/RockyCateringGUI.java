@@ -1,13 +1,5 @@
 package assignment;
 
-/*
-Programmer: ENTER YOUR NAME
-Course: Programming Fundamentals COIT 11222 T319
-File: RockyCateringGUI.java
-Purpose: Assignment Two -- Rocky Catering Service windowed application
-Date: ENTER THE DATE
-*/
-
 import java.awt.FlowLayout;
 import java.awt.Font;
 
