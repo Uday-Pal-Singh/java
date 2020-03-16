@@ -1,4 +1,5 @@
-this program contains two files 
+## This program contains two files :
+
 1) launch_GUI.java which is used to launch the program (as it comtains the main method) .
 2) calculator.java which contains all the code for the calculator program .
 
