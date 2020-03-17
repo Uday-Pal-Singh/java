@@ -9,9 +9,9 @@ import javax.swing.*;
 public class Calculator extends JFrame implements ActionListener {
 
 	JLabel l1,l2;
-	JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bdiv, bmul, bsub, badd, bequal, bdot,bclear;
-	JTextField t1 = new JTextField(14);
-	 Font bigFont = t1.getFont().deriveFont(Font.PLAIN, 16f);
+	JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bdiv, bmul, bsub, badd, bequal, bdot,bclear,bundo;
+	JTextField t1 = new JTextField(12);
+	 Font bigFont = t1.getFont().deriveFont(Font.PLAIN, 18f);
 	 Font VbigFont = t1.getFont().deriveFont(Font.PLAIN, 17f);
 	public Calculator() {
 
@@ -37,7 +37,8 @@ public class Calculator extends JFrame implements ActionListener {
 		b0 = new JButton(" 0 ");
 		bequal = new JButton(" = ");
 		badd = new JButton(" + ");
-        bclear = new JButton(" CE ");
+        bclear = new JButton(" C ");
+        bundo = new JButton(" CE ");
 		// adding all the components to JFrame
 		add(l1);
 		add(t1);
@@ -60,6 +61,7 @@ public class Calculator extends JFrame implements ActionListener {
 		add(b0);
 		add(bequal);
 		add(badd);
+		add(bundo);
 		add(bclear);
 
 		// action listener for all the buttons
@@ -78,9 +80,8 @@ public class Calculator extends JFrame implements ActionListener {
 		bequal.addActionListener(this);
 		badd.addActionListener(this);
 		bdiv.addActionListener(this);
-		b0.addActionListener(this);
-		b0.addActionListener(this);
 		bclear.addActionListener(this);
+		bundo.addActionListener(this);
 
 		// all the methods for the JFrame
 		setLayout(new FlowLayout()); // setting the layout
@@ -91,7 +92,7 @@ public class Calculator extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // creating the default close operation on clicking cross
 
 	}
-
+     // programming the actions performed by all the buttons
 	public void actionPerformed(ActionEvent a) {
 		String action = a.getActionCommand();
 
@@ -106,7 +107,7 @@ public class Calculator extends JFrame implements ActionListener {
 		} else if (action.equals(" = ")) {
 			opperation();
 		} else if (action.equals(" 0 ")) {
-			t1.setText(t1.getText() + "0");
+			t1.setText(t1.getText() +"0" );
 		} else if (action.equals(" 1 ")) {
 			t1.setText(t1.getText() + "1");
 		} else if (action.equals(" 2 ")) {
@@ -125,11 +126,15 @@ public class Calculator extends JFrame implements ActionListener {
 			t1.setText(t1.getText() + "8");
 		} else if (action.equals(" 9 ")) {
 			t1.setText(t1.getText() + "9");
-		}else if (action.equals(" CE ")) {
+		}else if (action.equals(" C ")) {
 			t1.setText("");
+		}else if (action.equals(" CE ")) {
+			String last_char = t1.getText();
+			t1.setText(last_char.substring(0, (last_char.length()-1)));
 		}
 	}
 
+	// operation method contains the code for all the operations performed
 	private void opperation() {
 		String textInput = t1.getText();
 		int x, y, z,l;
